@@ -14,6 +14,7 @@ public class LettersInput : MonoBehaviour
     private void Start()
     {
         textDisplay.color = Color.gray;
+
         textDisplay.text = "Enter Code";
     }
 
