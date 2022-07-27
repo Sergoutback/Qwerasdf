@@ -11,6 +11,12 @@ public class LettersInput : MonoBehaviour
 
     [SerializeField] private string press_button;
 
+    private void Start()
+    {
+        textDisplay.color = Color.gray;
+        textDisplay.text = "Enter Code";
+    }
+
     public void SubmitButton()
     {
         SceneManager.LoadScene(1);
@@ -18,6 +24,20 @@ public class LettersInput : MonoBehaviour
 
     public void On_Click_button()
     {
-        textDisplay.text += press_button;
+        if (textDisplay.text == "Enter Code")
+        {
+            textDisplay.text = null;
+
+            textDisplay.color = Color.black;
+
+            textDisplay.text += press_button;
+        }
+
+        else
+        {
+            textDisplay.color = Color.black;
+
+            textDisplay.text += press_button;
+        }
     }
 }

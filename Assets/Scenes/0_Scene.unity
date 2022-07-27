@@ -994,6 +994,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009645115}
     m_Modifications:
+    - target: {fileID: 1002655559421647524, guid: a8aa924031a1f1846b038570ea1d3cbd, type: 3}
+      propertyPath: textDisplay
+      value: 
+      objectReference: {fileID: 1358217809}
     - target: {fileID: 2106401008508908939, guid: a8aa924031a1f1846b038570ea1d3cbd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1485,7 +1489,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 48
-    m_FontStyle: 0
+    m_FontStyle: 2
     m_BestFit: 1
     m_MinSize: 4
     m_MaxSize: 48
