@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 
 public class LettersInput : MonoBehaviour
@@ -11,9 +11,9 @@ public class LettersInput : MonoBehaviour
 
     [SerializeField] private string press_button;
 
-    private void SubmitButton()
+    public void SubmitButton()
     {
-
+        SceneManager.LoadScene(1);
     }
 
     public void On_Click_button()
