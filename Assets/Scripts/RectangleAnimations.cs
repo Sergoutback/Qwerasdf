@@ -3,92 +3,69 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class RectangleAnimations: MonoBehaviour
+public class RectangleAnimations : MonoBehaviour
 {
-    //[SerializeField] private GameObject rectangle;
-
     [SerializeField] private Animator animator;
 
-    private void Start()
-    {
-        //animator = GetComponent<Animator>();
-    }
 
-    void Update()
+    private void Update()
     {
         ButtonDown();
     }
-
-    //TODO Change to Object oriented
-    //TODO Make more slow Reset
+  
     private void ButtonDown()
     {
         if (Input.GetKeyDown(KeyCode.Y))
         {
             Reset();
 
-            animator.SetBool(name: "ButtonY", value: true);
+            AnimatorSetBool("ButtonY", true);
         }
-
-        //if (Input.GetKeyUp(KeyCode.Y))
-        //{
-        //    animator.SetBool(name: "ButtonY", value: false);
-        //}
 
 
         if (Input.GetKeyDown(KeyCode.B))
         {
             Reset();
 
-            animator.SetBool(name: "ButtonB", value: true);
+            AnimatorSetBool("ButtonB", true);
         }
-
-        //if (Input.GetKeyUp(KeyCode.B))
-        //{
-        //    animator.SetBool(name: "ButtonB", value: false);
-        //}
+        
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reset();
 
-            animator.SetBool(name: "ButtonR", value: true);
+            AnimatorSetBool("ButtonR", true);
         }
-
-        //if (Input.GetKeyUp(KeyCode.R))
-        //{
-        //    animator.SetBool(name: "ButtonR", value: false);
-        //}
 
         if (Input.GetKeyDown(KeyCode.G))
         {
             Reset();
 
-            animator.SetBool(name: "ButtonG", value: true);
+            AnimatorSetBool("ButtonG", true);
         }
-
-        //if (Input.GetKeyUp(KeyCode.G))
-        //{
-        //    animator.SetBool(name: "ButtonG", value: false);
-        //}
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Reset();
         }
-
-
     }
-    //TODO Change to Object oriented
+
+    //TODO Make more slow Reset
     private void Reset()
     {
-        animator.SetBool(name: "ButtonB", value: false);
+        AnimatorSetBool("ButtonB", false);
 
-        animator.SetBool(name: "ButtonY", value: false);
+        AnimatorSetBool("ButtonY", false);
 
-        animator.SetBool(name: "ButtonR", value: false);
+        AnimatorSetBool("ButtonR", false);
 
-        animator.SetBool(name: "ButtonG", value: false);
-
+        AnimatorSetBool("ButtonG", false);
     }
+
+    private void AnimatorSetBool(string button, bool trueFalse)
+    {
+        animator.SetBool(button, trueFalse);
+    }
+
 }

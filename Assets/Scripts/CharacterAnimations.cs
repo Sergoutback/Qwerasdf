@@ -8,48 +8,61 @@ public class CharacterAnimations : MonoBehaviour
 
     [SerializeField] private Animator characterAnimator;
 
+    [SerializeField] private float newLossyScaleX;
 
-    void Start()
-    {
-        //characterTransform = GetComponent<Transform>();
+    [SerializeField] private float newLossyScaleY;
 
-        //characterAnimator = GetComponent<Animator>();
-    }
+    // Just to show another way
 
-    void Update()
+    //void Start()
+    //{
+    //    characterTransform = GetComponent<Transform>();
+
+    //    characterAnimator = GetComponent<Animator>();
+    //}
+
+    private void Update()
     {
         CharacterTransform();
 
         KeyDown();
     }
 
-    void CharacterTransform()
+    //For now doesen't work
+    public void CharacterTransform()
     {
-        float newLocalScaleX = characterTransform.localScale.x;
+        newLossyScaleX = characterTransform.lossyScale.x;
 
-        float newLocalScaleY = characterTransform.localScale.y;
+        newLossyScaleY = characterTransform.lossyScale.y;
 
 
-        if (newLocalScaleX > newLocalScaleY)
+        if (newLossyScaleX > newLossyScaleY)
 
-            newLocalScaleX = newLocalScaleY;
+            newLossyScaleX = newLossyScaleY;
 
         else
 
-            newLocalScaleY = newLocalScaleX;
+            newLossyScaleY = newLossyScaleX;
     }
 
     private void KeyDown()
     {
         if (Input.GetKeyDown(KeyCode.Y) || Input.GetKeyDown(KeyCode.G) || Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.B))
         {
-            characterAnimator.SetBool(name: "KeyDown", value: false);
+            CharacterAnimatorSetBool(false);
 
-            characterAnimator.SetBool(name: "KeyDown", value: true);
+            CharacterAnimatorSetBool(true);
         }
         if (Input.GetKeyUp(KeyCode.Y) || Input.GetKeyUp(KeyCode.G) || Input.GetKeyUp(KeyCode.R) || Input.GetKeyUp(KeyCode.B) || Input.GetKeyDown(KeyCode.Q))
+            
+            CharacterAnimatorSetBool(false);
+    }
 
-            characterAnimator.SetBool(name: "KeyDown", value: false);
+    private void CharacterAnimatorSetBool(bool trueFalse)
+    {
+        string button = "KeyDown";
+
+        characterAnimator.SetBool(button, trueFalse);
     }
 }
 
