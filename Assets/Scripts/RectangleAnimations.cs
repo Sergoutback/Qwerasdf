@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using DG.Tweening;
+
+
 public class RectangleAnimations: MonoBehaviour
 {
     //[SerializeField] private GameObject rectangle;
@@ -18,6 +19,8 @@ public class RectangleAnimations: MonoBehaviour
         ButtonDown();
     }
 
+    //TODO Change to Object oriented
+    //TODO Make more slow Reset
     private void ButtonDown()
     {
         if (Input.GetKeyDown(KeyCode.Y))
@@ -64,13 +67,19 @@ public class RectangleAnimations: MonoBehaviour
             animator.SetBool(name: "ButtonG", value: true);
         }
 
+        //if (Input.GetKeyUp(KeyCode.G))
+        //{
+        //    animator.SetBool(name: "ButtonG", value: false);
+        //}
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Reset();
         }
 
-    }
 
+    }
+    //TODO Change to Object oriented
     private void Reset()
     {
         animator.SetBool(name: "ButtonB", value: false);
