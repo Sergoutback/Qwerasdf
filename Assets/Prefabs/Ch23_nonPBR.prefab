@@ -890,7 +890,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: c9f957b0c282cec40b0a018ae3d0c457, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -910,6 +910,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterTransform: {fileID: 3138826687838124750}
   characterAnimator: {fileID: 9038573726855504052}
+  newLossyScaleX: 0
+  newLossyScaleY: 0
 --- !u!1 &2480231853439464528
 GameObject:
   m_ObjectHideFlags: 0
