@@ -11,7 +11,7 @@ public class RectangleAnimations: MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     void Update()
